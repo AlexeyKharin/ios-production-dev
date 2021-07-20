@@ -30,7 +30,7 @@
         <!--Feed-->
         <scene sceneID="bye-GP-P6Y">
             <objects>
-                <viewController id="UOy-8g-tjm" customClass="FeedViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UOy-8g-tjm" customClass="FeedViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hnQ-fB-PJI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,6 +118,11 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kqe-LH-kso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="voj-G6-IU4" customClass="Coordinator" customModule="Navigation" customModuleProvider="target">
+                    <connections>
+                        <outlet property="tabBarController" destination="VVa-ty-c3K" id="2br-jm-F9q"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="-1059" y="-128"/>
         </scene>
@@ -143,7 +148,7 @@
         <!--Log In View Controller-->
         <scene sceneID="2of-DT-ylW">
             <objects>
-                <viewController id="H2y-pw-Imy" customClass="LogInViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="H2y-pw-Imy" customClass="LogInViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pmb-Bm-cbW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

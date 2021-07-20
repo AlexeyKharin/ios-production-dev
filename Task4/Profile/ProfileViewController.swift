@@ -1,7 +1,9 @@
 
 import UIKit
 
+
 class ProfileViewController: UIViewController {
+    
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -54,7 +56,7 @@ extension ProfileViewController: UITableViewDataSource {
             withIdentifier: String(describing: PostTableViewCell.self),
             for: indexPath) as! PostTableViewCell
         
-        cell.content = Strotage.collection[indexPath.section].imageContent[indexPath.row]
+        cell.content =  Strotage.collection[indexPath.section].imageContent[indexPath.row]
         
         return cell
     }

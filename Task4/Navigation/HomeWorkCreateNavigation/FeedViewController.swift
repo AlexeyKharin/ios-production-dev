@@ -7,7 +7,7 @@
 //
 import UIKit
 final class FeedViewController: UIViewController {
-    
+        
     var output: FeedViewOutput?
     
     let post: Post = Post(title: "Пост")
@@ -20,7 +20,6 @@ final class FeedViewController: UIViewController {
             guard let self = self else { return }
             self.output?.showPost()
         }
-        output?.navigationController = navigationController
         let constaints = [
         stack.topAnchor.constraint(equalTo: view.topAnchor, constant:300),
         stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
