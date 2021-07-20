@@ -25,8 +25,9 @@ class LoginInspector: LoginViewControllerDelegate {
     public static let shared: LoginInspector = .init()
     
     private init() {
-        self.login = "Vasily"
-        self.pswd = "Masha"
+        self.login = "Z"
+        self.pswd = "Z"
+        
     }
     
     func checkLogin(login: String) -> Bool {

@@ -8,7 +8,9 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-    var delegate: LoginViewControllerDelegate?
+    
+    var outPut: OutPut?
+    
     var image: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "logo")
@@ -33,13 +35,7 @@ class LogInViewController: UIViewController {
     }()
     
     @objc func press () {
-        guard let login = textfieldTwo.text else { return }
-        guard let pswd = textfieldOne.text else { return }
-        guard let safetyDelegate = delegate else { return }
-        if safetyDelegate.checkLogin(login: login) && safetyDelegate.checkPswd(pswd: pswd) {
-            let vc = ProfileViewController()
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        outPut?.show()
     }
     
     var stack: UIStackView = {
@@ -67,10 +63,13 @@ class LogInViewController: UIViewController {
         textField.returnKeyType = .done
         textField.autocapitalizationType = .words
         textField.placeholder = "Password"
+        textField.addTarget(self, action: #selector(savePswd), for: .editingChanged)
         return textField
     }()
     
-    
+    @objc func savePswd() {
+        outPut?.pswd = textfieldOne.text
+    }
     
     lazy var textfieldTwo: MyTextField = {
         let textField = MyTextField()
@@ -81,8 +80,13 @@ class LogInViewController: UIViewController {
         textField.returnKeyType = .done
         textField.autocapitalizationType = .words
         textField.placeholder = "Email of phone"
+        textField.addTarget(self, action: #selector(saveLogin), for: .editingChanged)
         return textField
     }()
+    
+    @objc func saveLogin() {
+        outPut?.login = textfieldTwo.text
+    }
     
     private let containerView: UIView = {
         let containerView = UIView()
@@ -98,6 +102,9 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        outPut?.navigationController = navigationController
+        outPut?.login = textfieldTwo.text
+        outPut?.pswd = textfieldOne.text
         view.backgroundColor = .white
         view.addSubview(scrollView)
         scrollView.addSubview(containerView)
